@@ -1,0 +1,12 @@
+ion-footer {
+    background: #eaeced !important;
+    ion-col:last-of-type {
+        border-right: none;
+    }
+    ion-col {
+        border-right: 1px solid #dddfe1;
+    }
+    small {
+        margin-right: 10px;
+    }
+}

@@ -1,0 +1,50 @@
+<!-- 
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header> 
+-->
+<ion-content scroll="false">
+  <form (submit)="doSignup()" padding>
+    <img [(src)]="logo.app" class="name-up" />
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+        <ion-input type="phone" [(ngModel)]="account.name" name="name"></ion-input>
+        <ion-label class="icon">
+          <img [(src)]="logo.email" />
+        </ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label fixed>{{ 'PHONE' | translate }}</ion-label>
+        <ion-input type="phone" [(ngModel)]="account.phone" name="phone"></ion-input>
+        <ion-label class="icon">
+          <img [(src)]="logo.email" />
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>{{ 'CODE' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        <ion-label class="icon">
+          <img [(src)]="logo.password" />
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+      <div >
+        <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+      </div>
+      <div padding class="text-info">
+        <p >
+          <ion-label>{{ 'ACCOUNT_CREATE_QUST' | translate }}</ion-label>
+          <a (click)="goToLogin()" >
+            <i>{{ 'CLICK_HERE' | translate }}</i>
+          </a>
+        </p>
+      </div>
+  </form> 
+</ion-content>

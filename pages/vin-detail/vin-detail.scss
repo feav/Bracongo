@@ -1,0 +1,77 @@
+page-vin-detail {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    ion-scroll {
+        position: relative;
+        height: 100%;
+    }
+    ion-content {
+        background: light !important;
+    }
+    .background-image {
+        background-position: center;
+        background-size: cover;
+        height: 170px;
+    }
+    .background-image:hover {
+        background-position: center;
+        transform: rotate(10deg);
+        background-repeat: no-repeat;
+        transition-property: background-size;
+        transition-duration: 1s;
+    }
+    ion-col[width-40] {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+    ion-col:last-of-type {
+        padding: 0;
+        position: relative;
+    }
+    .social {
+        position: absolute;
+        top: 10px;
+        right: 0px;
+        width: 100%;
+        margin-right: 10px;
+        text-align: right;
+        .badge {
+            color: secondary;
+            font-size: 0.975rem;
+        }
+        ion-icon {
+            font-size: 2rem;
+            padding-right: 5px;
+        }
+    }
+    .content-inner {
+        position: absolute;
+        bottom: 10px;
+        margin: 5px;
+        // padding: 0 10px;
+        h2 {
+            font-size: 1.4rem !important;
+            font-weight: 500!important;
+            color: primary !important;
+            margin-bottom: 10px !important;
+        }
+        p {
+            font-size: 1.32rem !important;
+            font-weight: 300!important;
+            color: dark !important;
+            margin-bottom: 5px;
+        }
+        a {
+            font-size: 1.357rem !important;
+            font-weight: 300!important;
+            color: secondary !important;
+            text-transform: capitalize;
+        }
+        .time {
+            font-size: 1rem!important;
+            color: stable;
+            text-transform: capitalize;
+        }
+    }
+}

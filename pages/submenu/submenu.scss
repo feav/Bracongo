@@ -1,0 +1,33 @@
+page-submenu {
+	.item-md.item-block .item-inner {
+	    padding-right: 8px;
+	    border-bottom: 1px solid #ffffff;
+	}
+	ion-col{
+		box-shadow: 0px 0 3px 0px #6f5858;
+	    margin: 2% !important;
+	    width: 40% !important;
+	    ion-icon{
+	    	position: absolute;
+		    top: 1px;
+		    right: 1px;
+		    z-index: 2;
+		    color: #900706;
+		    cursor: pointer;
+		    padding: 10px;
+    		border-radius: 100%;
+	    }
+		ion-item{
+			p,h3{
+				text-align:center;
+			}
+			img{
+				    width: 80%;
+				    margin-left: 10%;
+				    border-radius: 100%;
+				    min-width: 90px;
+				    min-height: 90px;
+			}
+		}
+	}
+}

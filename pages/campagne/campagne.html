@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar class="theme">
+        <!-- <button ion-button navPop strong>
+          <ion-icon name="ios-arrow-back" ></ion-icon>
+        </button> -->
+        <ion-title>Campagne</ion-title>
+        <ion-buttons end>
+            <button ion-button menuToggle strong>
+        <ion-icon name="md-more" showWhen="core,android,windows"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-label>
+            <ion-icon name="md-calendar"></ion-icon>Entre 12-09-2017 et 19-12-2017</ion-label>
+        <ion-row *ngFor="let menu of cardItems">
+            <ion-col *ngFor="let item of menu">
+                <ion-icon name="md-more" (click)="openModal(item)"></ion-icon>
+                <img src="{{item.image}}" />
+                <ion-label (click)="viewDetail(item)">{{item.name}}</ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-label>
+            <ion-icon name="md-calendar"></ion-icon>Entre 12-05-2017 et 19-10-2017</ion-label>
+        <ion-row *ngFor="let menu of cardItems">
+            <ion-col *ngFor="let item of menu">
+                <ion-icon name="md-more" (click)="openModal(item)"></ion-icon>
+                <img src="{{item.image}}" />
+                <ion-label (click)="viewDetail(item)">{{item.name}}</ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

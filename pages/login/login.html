@@ -1,0 +1,48 @@
+<ion-content>
+    <div class="control">
+        <!--Header-->
+        <ion-row class="header">
+            <ion-col>
+                <img src="assets/images/logo/logo1.png" />
+            </ion-col>
+        </ion-row>
+        <!--Content - form-->
+        <ion-row class="content">
+            <ion-col>
+                <form (submit)="doLogin()">
+                    <ion-item>
+                        <ion-label floating>
+                            <ion-icon name="at" item-left></ion-icon>Username</ion-label>
+                        <ion-input type="email" [(ngModel)]="account.phone" name="phone"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label floating>
+                            <ion-icon name="lock" item-left></ion-icon>Password</ion-label>
+                        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+                    </ion-item>
+                </form>
+                <button ion-button block (click)="doLogin()">Login</button>
+                <ion-row class="social">
+                    <ion-col>
+                        <button ion-button color="facebook" block>
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button color="google" block>
+              <ion-icon name="logo-google"></ion-icon>
+            </button>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="footer">
+                    <ion-col text-left no-padding>
+                        <p>need help?</p>
+                    </ion-col>
+                    <ion-col text-right no-padding>
+                        <p>Close</p>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

@@ -1,0 +1,199 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+ion-fab>button>ion-icon {
+    color: white !important;
+}
+
+#header,
+#header>div,
+ion-toolbar {
+    color: white !important;
+    background: #c0101f !important;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: none !important;
+    background-image: none;
+    color: rgb(0, 0, 0);
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    background-color: rgba(0, 0, 0, 0) !important;
+    background-image: none;
+    color: rgb(255, 255, 255);
+}
+
+.button-md {
+    // border-radius: 15px;
+}
+
+.swiper-pagination-bullet-active {
+    background: #d20907 !important;
+}
+
+.name-logo {
+    min-width: 150px;
+    height: 60px;
+}
+
+.toolbar-background-md {
+    background: #c0101f;
+    img {
+        height: 40px;
+    }
+}
+
+page-root {
+    ion-menu {
+        .scroll-content {
+            overflow-y: hidden;
+        }
+    }
+    .menu {
+        text-align: center;
+        height: 100%;
+        .item {
+            display: table;
+            padding: 10px;
+            width: 100%;
+            ion-icon {
+                display: table-cell;
+                vertical-align: middle;
+                font-size: 5rem;
+                color: color($colors, light);
+            }
+            img {
+                display: table-cell;
+                vertical-align: middle;
+                // border: 1px solid color($colors, stable);
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                margin: 0% auto;
+            }
+        }
+    }
+}
+
+ion-label,
+ion-datetime,
+ion-input,
+ion-checkbox,
+ion-radio {
+    font-weight: 300;
+    color: #000;
+}
+
+ion-label {
+    color: #999;
+}
+
+.item-datetime .label-md,
+.item-select .label-md,
+.item-input .label-md {
+    font-weight: 300;
+}
+
+.item-md.item-toggle ion-label {
+    color: #999;
+    font-weight: 300;
+}
+
+.action-sheet-cancel {
+    color: color($colors, danger)!important;
+}
+
+.card-1 {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.card-2 {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-3 {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card-4 {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card-5 {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.toolbar-title-md {
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-weight: 300 !important;
+}
+
+.card-background-page {
+    ion-card {
+        position: relative;
+        text-align: center;
+    }
+    .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+    }
+    .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ee0d1c;
+}
+
+div.swiper-pagination.hide.swiper-pagination-clickable.swiper-pagination-bullets,
+div.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+    display: block !important;
+    opacity: 1;
+}
+
+.menu-inner {
+    width: 70px;
+}
+
+ion-header>ion-navbar>div.toolbar-content.toolbar-content-ios>ion-title {
+    background: #c0101f !important;
+}
+
+.toolbar-background-wp {
+    background: #c0101f !important;
+}
