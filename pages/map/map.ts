@@ -39,12 +39,16 @@ export class MapPage {
     let ionic: LatLng = new LatLng(43.0741904, -89.3809802);
 
     // create CameraPosition
-    let position: CameraPosition = {
+    // let position: CameraPosition = {
+    //   target: ionic,
+    //   zoom: 18,
+    //   tilt: 30
+    // };
+    let position:any =  {
       target: ionic,
       zoom: 18,
       tilt: 30
     };
-
     // move the map's camera to position
     map.moveCamera(position);
 

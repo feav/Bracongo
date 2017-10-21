@@ -1,0 +1,41 @@
+<!--
+  Generated template for the JeuPlayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>JeuPlay</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="toggleMenu()">
+<ion-icon name="more"></ion-icon>
+</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card padding text-center>
+        <!-- <h1>{{name}}</h1> -->
+        <ion-row id="stat">
+            <ion-col>
+                3 coups
+            </ion-col>
+            <ion-col>
+                4 min 30 sec
+            </ion-col>
+        </ion-row>
+        <button ion-button color="stable">Recommencer</button>
+    </ion-card>
+    <ion-grid>
+        <ion-row *ngFor="let menu of menus">
+            <ion-col *ngFor="let cat of menu" (click)="click(cat)">
+                <img src="{{cat.image}}" *ngIf="cat.index" />
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

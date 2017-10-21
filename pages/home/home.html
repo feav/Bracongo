@@ -37,7 +37,7 @@
     </ion-card>
     <ion-grid>
         <ion-row *ngFor="let menu of menus">
-            <ion-col *ngFor="let cat of menu" (click)="goToMenu(cat.index)">
+            <ion-col *ngFor="let cat of menu" (click)="goToMenu(cat)">
                 <img src="{{cat.image}}" />
                 <ion-label>{{cat.title}}</ion-label>
             </ion-col>

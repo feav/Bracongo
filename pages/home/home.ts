@@ -54,21 +54,21 @@ export class HomePage {
           description:"AA",
           image:"assets/images/black/event.png",
           color:'green',
-          index:1
+          page:"EvenementPage"
         },
         {
           title:"CAMPAGNES",
           description:"BB",
           image:"assets/images/black/campagne.png",
           color:'bleu',
-          index:2
+          page:"CampagnePage"
         }
         ,{
           title:"PRODUIT",
           description:"BB",
           image:"assets/images/black/produits.png",
           color:'red',
-          index:3
+          page:"ProduitPage"
         }
       ],
       [
@@ -77,44 +77,44 @@ export class HomePage {
           description:"BB",
           image:"assets/images/black/cle.png",
           color:'black',
-          index:4
+          page:"VinPage"
         },
         {
           title:"BAR PROCHE",
           description:"BB",
           image:"assets/images/black/bar.png",
           color:'yellow',
-          index:5
+          page:"BarPage"
         },
         {
           title:"FETE",
           description:"BB",
           image:"assets/images/black/fete.png",
           color:'pink',
-          index:6
+          page:"FetePage"
         }
       ],
       [
         {
-          title:"BAR PROCHE",
+          title:"REALITE AUGMENTE ",
           description:"BB",
-          image:"assets/images/black/about.png",
+          image:"assets/images/black/bouteille.png",
           color:'red',
-          index:7
+          page:"ProduitPage"
         },
         {
           title:"CONTACT",
           description:"BB",
           image:"assets/images/black/contact.png",
           color:'grey',
-          index:8
+          page:"ProduitPage"
         },
         {
           title:"JEU",
           description:"BB",
           image:"assets/images/black/jeux.png",
           color:'red',
-          index:9
+          page:"JeuPage"
         }
       ]
     ];
@@ -133,14 +133,10 @@ export class HomePage {
   	console.log(this.menus);
   }
   goToMenu(e){
-    if(e==1)
-      this.navCtrl.push('EvenementPage');
-    if(e==2)
-      this.navCtrl.push('CampagnePage');
-    if(e==3)
-      this.navCtrl.push('ProduitPage');
-    if(e==4)
-      this.navCtrl.push('VinPage');
+    if(e.page)
+      this.navCtrl.push(e.page);
+    else
+      this.navCtrl.push('HomePage');
   }
   addTransaction(){
   	this.navCtrl.push('ItemCreatePage');
