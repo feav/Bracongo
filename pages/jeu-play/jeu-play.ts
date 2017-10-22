@@ -44,6 +44,7 @@ export class JeuPlayPage {
     this.matrice = matrice;
     this.name = name;
     let i,j;
+    /*
     for(i=0;i<matrice;i++){
       var row = [];
       for(j=0;i<matrice;j++){
@@ -56,10 +57,11 @@ export class JeuPlayPage {
           }
         );
       }
-      this.menus.push(<any[]>row);
+      // this.menus.push(row);
     }
+    */
     if (matrice == 3) {
-  /*
+  
       this.menus = [
         [
           {
@@ -122,7 +124,115 @@ export class JeuPlayPage {
           }
         ]
       ];
-  */
+  
+    }else if(matrice == 4){
+
+      this.menus = [
+        [
+          {
+            case: 0,
+            index: 0,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/0.jpg",
+          },
+          {
+            case: 1,
+            index: 1,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/1.jpg"
+          },
+          {
+            case: 2,
+            index: 2,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/2.jpg"
+          },
+          {
+            case: 3,
+            index: 3,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/2.jpg"
+          }
+        ],
+        [
+          {
+            case: 4,
+            index: 4,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/4.jpg"
+          },
+          {
+            case: 5,
+            index: 5,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/5.jpg"
+          },
+          {
+            case: 6,
+            index: 6,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/3.jpg"
+          },
+          {
+            case: 7,
+            index: 7,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/3.jpg"
+          }
+        ],
+        [
+          {
+            case: 8,
+            index: 8,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/8.jpg"
+          },
+          {
+            case: 9,
+            index: 9,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/6.jpg"
+          },
+          {
+            case: 10,
+            index: 10,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/7.jpg"
+          },
+          {
+            case: 11,
+            index: 11,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/7.jpg"
+          }
+        ],
+        [
+          {
+            case: 12,
+            index: 12,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/8.jpg"
+          },
+          {
+            case: 13,
+            index: 13,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/6.jpg"
+          },
+          {
+            case: 14,
+            index: 14,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/7.jpg"
+          },
+          {
+            case: 15,
+            index: 15,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/7.jpg"
+          }
+        ]
+      ];
     }
 
   }

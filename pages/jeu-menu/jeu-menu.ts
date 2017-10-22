@@ -18,54 +18,100 @@ export class JeuMenuPage {
   item:any;
   constructor(public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams) {
   	this.item = navParams.get('item');
-    this.menus = [
-      [
-        {
-          title:"BOB L EPONGE",
-          image:"assets/images/jeu/bobleponge.jpg",
-          page:"EvenementPage"
-        },
-        {
-          title:"DORE L'EXPLORATRICE",
-          description:"BB",
-          image:"assets/images/jeu/dora_exploratrice.jpg",
-          color:'bleu',
-          page:"CampagnePage"
-        }
-      ],
-      [
-        {
-          title:"INDESTRUCTIBLES",
-          description:"BB",
-          image:"assets/images/jeu/indestructibles.jpg",
-          color:'black',
-          page:"VinPage"
-        },
-        {
-          title:"MINIONS",
-          description:"BB",
-          image:"assets/images/jeu/minimos.jpg",
-          color:'yellow',
-          page:"BarPage"
-        }
-      ],
-      [
-        {
-          title:"POKEMON",
-          description:"BB",
-          image:"assets/images/jeu/pokemon.jpg",
-          color:'red',
-          page:"ProduitPage"
-        },
-        {
-          title:"SIMPSON",
-          description:"BB",
-          image:"assets/images/jeu/simpson.jpg",
-          color:'grey',
-          page:"ProduitPage"
-        }
-      ]
-    ];
+    this.setConfig(this.item.matrice);
+  }
+  setConfig(matrice){
+    if(matrice==3){
+      this.menus = [
+        [
+          {
+            title:"BOB L'EPONGE",
+            image:"assets/images/jeu/bobleponge.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          },
+          {
+            title:"DORE L'EXPLORATRICE",
+            image:"assets/images/jeu/dora_exploratrice.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          }
+        ],
+        [
+          {
+            title:"INDESTRUCTIBLES",
+            image:"assets/images/jeu/indestructibles.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          },
+          {
+            title:"MINIONS",
+            image:"assets/images/jeu/minimos.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          }
+        ],
+        [
+          {
+            title:"POKEMON",
+            image:"assets/images/jeu/pokemon.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          },
+          {
+            title:"SIMPSON",
+            image:"assets/images/jeu/simpson.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          }
+        ]
+      ];
+    }else if(matrice==4){
+      this.menus = [
+        [
+          {
+            title:"BOB L'EPONGE",
+            image:"assets/images/jeu/bobleponge.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          },
+          {
+            title:"DORE L'EXPLORATRICE",
+            image:"assets/images/jeu/dora_exploratrice.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          }
+        ],
+        [
+          {
+            title:"INDESTRUCTIBLES",
+            image:"assets/images/jeu/indestructibles.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          },
+          {
+            title:"MINIONS",
+            image:"assets/images/jeu/minimos.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          }
+        ],
+        [
+          {
+            title:"POKEMON",
+            image:"assets/images/jeu/pokemon.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          },
+          {
+            title:"SIMPSON",
+            image:"assets/images/jeu/simpson.jpg",
+            name:"bobleponge",
+            matrice:matrice
+          }
+        ]
+      ];
+    }
   }
   goToGame(cat){
     this.navCtrl.push("JeuPlayPage",{item:cat});
