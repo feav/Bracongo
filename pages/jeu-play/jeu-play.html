@@ -5,31 +5,29 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
     <ion-navbar>
         <ion-title>JeuPlay</ion-title>
         <ion-buttons end>
             <button ion-button (click)="toggleMenu()">
-<ion-icon name="more"></ion-icon>
-</button>
+                <ion-icon name="more"></ion-icon>
+            </button>
         </ion-buttons>
     </ion-navbar>
-
 </ion-header>
 
 
 <ion-content>
     <ion-card padding text-center>
-        <!-- <h1>{{name}}</h1> -->
         <ion-row id="stat">
             <ion-col>
-                3 coups
+                <span>{{coups}}</span> <label>coups</label>
             </ion-col>
             <ion-col>
-                4 min 30 sec
+                <span *ngIf="hour">{{hour}}</span> <label *ngIf="hour">hr </label>
+                <span *ngIf="min">{{min}}</span> <label *ngIf="min">min </label>
+                <span *ngIf="sec">{{sec}}</span> <label *ngIf="sec">sec </label>
             </ion-col>
         </ion-row>
-        <button ion-button color="stable">Recommencer</button>
     </ion-card>
     <ion-grid>
         <ion-row *ngFor="let menu of menus">

@@ -1,5 +1,12 @@
 $colors: rgb(180, 55, 76);
 page-jeu-play {
+    ion-grid {
+        background-image: url("../assets/images/bg/bg.png");
+        background-size: cover;
+        background-position: top;
+        margin: 5px;
+        box-shadow: inset 0 0 2px 1px #0a0303;
+    }
     ion-grid,
     ion-row,
     ion-col {
@@ -53,6 +60,13 @@ page-jeu-play {
             background: white !important;
             font-size: larger;
             text-shadow: 0 0 1px #d0caca;
+        }
+        span {
+            font-size: x-large;
+            text-shadow: 0 0 2px #fffefe;
+        }
+        label {
+            font-size: xx-small;
         }
     }
     ion-col:hover {

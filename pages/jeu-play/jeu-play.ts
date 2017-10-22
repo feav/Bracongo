@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,MenuController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 /**
  * Generated class for the JeuPlayPage page.
@@ -15,75 +15,165 @@ import { IonicPage, NavController, NavParams,MenuController } from 'ionic-angula
 })
 export class JeuPlayPage {
 
-  menus:any[][];
-  item:any;
-  matrice:any;
-  name:any;
-  constructor(public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams) {
-  	this.item = navParams.get('item');
-      this.matrice = 3;
-      this.name = "bobleponge";
+  menus: any[][];
+  item: any;
+  matrice: any;
+  name: any;
+  coups: number = 0;
+  min: number = 0;
+  sec: number = 0;
+  hour: number = 0;
+  constructor(public menuCtrl: MenuController, public navCtrl: NavController, public navParams: NavParams) {
+    this.item = navParams.get('item');
+    this.setConfigGame(3, "bobleponge");
+    var _this = this;
+    setInterval(
+      function () {
+        _this.sec++;
+        if (_this.sec == 60) {
+          _this.min++;
+          _this.sec = 0;
+        }
+        if (_this.min == 60) {
+          _this.hour++;
+          _this.min = 0;
+        }
+      }, 1000);
+  }
+  setConfigGame(matrice, name) {
+    this.matrice = matrice;
+    this.name = name;
+    let i,j;
+    for(i=0;i<matrice;i++){
+      var row = [];
+      for(j=0;i<matrice;j++){
+        row.push(
+          {
+            case: i+j,
+            index: i+j,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/"+(i+j)+".jpg",
+          }
+        );
+      }
+      this.menus.push(<any[]>row);
+    }
+    if (matrice == 3) {
+  /*
       this.menus = [
         [
           {
-            index:0,
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/0.jpg",
+            case: 0,
+            index: 0,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/0.jpg",
           },
           {
-            index:1,
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/1.jpg"
+            case: 1,
+            index: 1,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/1.jpg"
           },
           {
-            index:2,
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/2.jpg"
+            case: 2,
+            index: 2,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/2.jpg"
           }
         ],
         [
           {
-            index:3,
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/3.jpg"
+            case: 3,
+            index: 3,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/3.jpg"
           },
           {
-            index:4,
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/4.jpg"
+            case: 4,
+            index: 4,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/4.jpg"
           },
           {
-            index:5,
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/5.jpg"
+            case: 5,
+            index: 5,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/5.jpg"
           }
         ],
         [
           {
-            index:6,
-            description:"BB",
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/6.jpg"
+            case: 6,
+            index: 6,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/6.jpg"
           },
           {
-            index:7,
-            description:"BB",
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/7.jpg"
+            case: 7,
+            index: 7,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/7.jpg"
           },
           {
-            index:8,
-            description:"BB",
-            image:"assets/images/jeu/"+this.matrice+"/"+this.name+"/8.jpg"
+            case: 8,
+            index: 8,
+            click: 0,
+            image: "assets/images/jeu/" + matrice + "/" + name + "/8.jpg"
           }
         ]
       ];
+  */
     }
-    viewDetail(e){
-      const profileModal = this.navCtrl.push('JeuMenuPage', { item: e });
-    }
-    click(e){
-      
-    }
-    ionViewDidLoad() {
-      console.log('ionViewDidLoad SubmenuPage');
-    }
-    toggleMenu(){
 
+  }
+  viewDetail(e) {
+    const profileModal = this.navCtrl.push('JeuMenuPage', { item: e });
+  }
+  canMove(e) {
+    let i: number, j: number, x: number, y: number, cases: number;
+    for (i = 0; i < this.menus.length; i++) {
+      for (j = 0; j < this.menus[i].length; j++) {
+        if (this.menus[i][j].index == 0) {
+          cases = this.menus[i][j].case;
+          x = cases % this.matrice;
+          y = (cases - x) / this.matrice;
+          var permited = [];
+          permited.push((x + 1) + y * this.matrice);
+          permited.push((x - 1) + y * this.matrice);
+          permited.push(x + (y + 1) * this.matrice);
+          permited.push(x + (y - 1) * this.matrice);
+          return permited.indexOf(e.case) >= 0;
+        }
+      }
     }
-    cancel(){
-      this.navCtrl.pop();
+    return 0;
+  }
+  click(e) {
+    if (!this.canMove(e))
+      return;
+    let i: number, j: number, continuer: boolean = true, image: string;
+    for (i = 0; i < this.menus.length && continuer; i++) {
+      for (j = 0; j < this.menus[i].length; j++) {
+        if (this.menus[i][j].index == 0) {
+          this.menus[i][j].index = e.index;
+          image = this.menus[i][j].image;
+          this.menus[i][j].image = e.image;
+          e.image = image;
+          e.index = 0;
+          this.coups++;
+          continuer = false;
+          break;
+        }
+      }
     }
+  }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SubmenuPage');
+  }
+  toggleMenu() {
+    this.menuCtrl.toggle();
+  }
+  cancel() {
+    this.navCtrl.pop();
+  }
 }
