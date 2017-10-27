@@ -31,8 +31,8 @@
     </ion-card>
     <ion-grid>
         <ion-row *ngFor="let menu of menus">
-            <ion-col *ngFor="let cat of menu" (click)="click(cat)">
-                <img src="{{cat.image}}" *ngIf="cat.index" />
+            <ion-col *ngFor="let cat of menu" (click)="click(cat)" [ngClass]="{'final': win()}">
+                <img src="{{cat.image}}" *ngIf="cat.index ||  win()" />
             </ion-col>
         </ion-row>
     </ion-grid>

@@ -183,6 +183,11 @@ page-jeu-play {
             }
         }
     }
+    ion-col.final {
+        margin: 0px !important;
+        transition-duration: 0.5s;
+        transition-property: margin;
+    }
 }
 
 ion-footer {
