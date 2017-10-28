@@ -63,7 +63,7 @@ export class TutorialPage {
   }
 
   openLogin() {
-    let modal = this.navCtrl.push('LoginPage');
+    let modal = this.navCtrl.push('WelcomePage');
   }
 
   openSignUp() {

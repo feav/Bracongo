@@ -33,37 +33,19 @@ export class JeuMenuPage {
           {
             title:"DORE L'EXPLORATRICE",
             image:"assets/images/jeu/dora_exploratrice.jpg",
-            name:"bobleponge",
+            name:"dora_exploratrice",
             matrice:matrice
           }
+          
         ],
         [
           {
-            title:"INDESTRUCTIBLES",
-            image:"assets/images/jeu/indestructibles.jpg",
-            name:"bobleponge",
-            matrice:matrice
-          },
-          {
-            title:"MINIONS",
+            title:"MINNIONS",
             image:"assets/images/jeu/minimos.jpg",
-            name:"bobleponge",
+            name:"minimos",
             matrice:matrice
           }
-        ],
-        [
-          {
-            title:"POKEMON",
-            image:"assets/images/jeu/pokemon.jpg",
-            name:"bobleponge",
-            matrice:matrice
-          },
-          {
-            title:"SIMPSON",
-            image:"assets/images/jeu/simpson.jpg",
-            name:"bobleponge",
-            matrice:matrice
-          }
+
         ]
       ];
     }else if(matrice==4){
@@ -75,38 +57,29 @@ export class JeuMenuPage {
             name:"bobleponge",
             matrice:matrice
           },
+          
           {
-            title:"DORE L'EXPLORATRICE",
-            image:"assets/images/jeu/dora_exploratrice.jpg",
-            name:"bobleponge",
-            matrice:matrice
-          }
-        ],
-        [
-          {
-            title:"INDESTRUCTIBLES",
-            image:"assets/images/jeu/indestructibles.jpg",
-            name:"bobleponge",
-            matrice:matrice
-          },
-          {
-            title:"MINIONS",
+            title:"MINNIONS",
             image:"assets/images/jeu/minimos.jpg",
-            name:"bobleponge",
+            name:"minimos",
             matrice:matrice
           }
-        ],
+        ]
+      ];
+    }else if(matrice==5){
+      this.menus = [
         [
           {
-            title:"POKEMON",
-            image:"assets/images/jeu/pokemon.jpg",
+            title:"BOB L'EPONGE",
+            image:"assets/images/jeu/bobleponge.jpg",
             name:"bobleponge",
             matrice:matrice
           },
+          
           {
-            title:"SIMPSON",
-            image:"assets/images/jeu/simpson.jpg",
-            name:"bobleponge",
+            title:"MINNIONS",
+            image:"assets/images/jeu/minimos.jpg",
+            name:"minimos",
             matrice:matrice
           }
         ]

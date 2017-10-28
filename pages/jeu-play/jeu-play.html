@@ -33,7 +33,15 @@
         <ion-row *ngFor="let menu of menus">
             <ion-col *ngFor="let cat of menu" (click)="click(cat)" [ngClass]="{'final': win()}">
                 <img src="{{cat.image}}" *ngIf="cat.index ||  win()" />
+
+                <ion-label *ngIf="showImage">{{cat.index}} </ion-label>
             </ion-col>
         </ion-row>
     </ion-grid>
+    <ion-fab bottom right>
+        <button ion-fab (click)="showImage = !showImage">
+            <ion-icon name="eye" *ngIf="showImage"></ion-icon>
+            <ion-icon name="eye-off" *ngIf="!showImage"></ion-icon>
+        </button>
+    </ion-fab>
 </ion-content>
